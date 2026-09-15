@@ -1,0 +1,15 @@
+---
+description: Articles and blog — facts, schema, GEO, blog-author pipeline
+globs: "**/*.{md,mdx,html}"
+alwaysApply: false
+---
+
+# Content and blog
+
+- Pipeline: `skills/blog-author/SKILL.md`. Facts — `skills/blog-author/project-facts.md` and the site code.
+- Do not invent metrics, reviews, features, or embed code.
+- Meaning first, keywords second. Narrative rewrite and humanize before publish.
+- Schema — `31-semantic-seo.mdc` + `skills/seo-aeo-schema-generator/SKILL.md`. Copy — `52-copy.mdc` and `avoid-ai-writing.mdc`.
+- AI-search citability — `skills/seo-geo/SKILL.md`. Do not replace facts with “optimal 134 words”.
+- Languages — only those the site actually serves. For Russian copy — `skills/blog-author/ru-locale-style.md`.
+- Custom 404 and chrome on the blog index match the rest of the site.

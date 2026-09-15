@@ -1,0 +1,17 @@
+---
+description: Hover, pointer, pressed, focus-visible, disabled; logo exception
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Interactive states
+
+- Everything clickable (buttons, button-like links, card links, icon buttons, custom controls): visible hover, `cursor: pointer`, and a visible **pressed** state (`:active` / pressed). No pressed state means the button is not done.
+- On touch and narrow viewports there may be no hover. A press response is required: `:active` and/or pressed on pointerdown. Do not set `-webkit-tap-highlight-color` to `transparent` until you have your own pressed style.
+- Exception — logo: `cursor: pointer` only, no hover. If the logo is a link (not on home), a light pressed state is allowed, still no hover effect.
+- Keyboard focus is required. Do not remove `outline` without a visible `:focus-visible` replacement.
+- `:hover` does not replace `:focus-visible`. States stay distinct.
+- Disabled: lower contrast, `cursor: not-allowed`, no active hover, no click. Do not use `disabled` on links — drop `href` or do not render the link.
+- Drag: `grab` / `grabbing`. Waiting: do not put `wait` on the whole page longer than needed.
+- Hit area at least 24×24 CSS px. Material target **48×48**. Do not rely on a tiny icon. Full state set — `16-ux.mdc`.
+- Hover/focus/active changes are not instant: transition ≥ 0.3s ease-out, except the logo (still no hover). Motion system — `skills/antigravity-design-expert/SKILL.md`.

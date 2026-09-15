@@ -1,0 +1,14 @@
+---
+description: lang, date/number locale, translations, CSS logical properties
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Internationalization
+
+- `html` has a correct `lang` (BCP 47). A fragment in another language has its own `lang`.
+- Dates, numbers, currency, phone — via locale, not US-style string glue if the product is not US-only.
+- Do not concatenate translation strings (“you have ” + n + “ letters”). Use placeholders and pluralization.
+- If the site may be multilingual: logical properties (`margin-inline`, `padding-block`), not hard left/right.
+- `dir="rtl"` only for RTL languages. Do not set rtl “just in case”.
+- `hreflang` only if real language URLs exist: reciprocal links on each version plus `x-default`. Same annotations in the mobile HTML.

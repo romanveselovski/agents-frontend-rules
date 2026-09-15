@@ -1,0 +1,19 @@
+---
+description: Mobile-first, touch, safe-area, dvh, 16px fields, content parity
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Responsive and mobile
+
+- Mobile-first. No horizontal scroll at 320+ except a table/code block with its own scroll. Do not set `width: 100vw` on `html`/`body`. Prefer container queries for components, not only viewport `@media`.
+- Content column has `max-width`. Images, video, embeds: `max-width: 100%`.
+- Google indexes mobile HTML: the same main copy, links, and schema as desktop. A hamburger collapses the menu, but the same items stay as links in the DOM (menu and/or footer).
+- Hover menus and tooltips on touch have click or focus. Hover effects live in `@media (hover: hover)`. Do not hide price or CTA on hover only.
+- Buttons and clickable controls on mobile: a visible press state (`:active` / pressed). Hover on touch does not replace press.
+- Type in `rem`. `input`/`select`/`textarea` font-size at least 16px or iOS zooms the form.
+- Viewport height: `dvh`/`svh`, not bare `100vh` on full-screen blocks. Insets: `env(safe-area-inset-*)` on fixed header, CTA, chat, modal.
+- A sticky header on a narrow screen does not eat half the viewport or hide focus. Form submit stays visible when the keyboard is open.
+- Phone and email — `tel:` and `mailto:`, not plain “call us” text.
+- Enough gap between adjacent buttons (24×24 targets; 24px circles do not intersect).
+- Check narrow and wide viewports. Critical actions are not desktop-hover only.

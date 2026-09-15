@@ -1,0 +1,14 @@
+---
+description: Logo without a self-link on home, external links, button vs URL
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Navigation and logo
+
+- On the home page the logo has no link to that same home. Do not create a cyclic link for crawlers or people.
+- On inner pages the logo links to `/` (or the site home URL).
+- Do not duplicate the logo with a “Home” link to the same URL next to it.
+- URL changes → `<a href>`. Action with no URL change → `<button>`. Forbidden: `div`+onClick, `a href="#"`, `javascript:void(0)`.
+- External links: `rel="noopener noreferrer"`. If `target="_blank"`, the accessible name or visible text says a new window opens.
+- Do not open inner sections in a new tab unless the user asked.

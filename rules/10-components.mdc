@@ -1,0 +1,16 @@
+---
+description: One UI primitive per role, tokens, compose screens from components
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Components
+
+- One Button, Input, Select, Textarea, Checkbox, Radio, Modal, Toast, Tooltip, Dropdown, Link per project. Variants are props, modifiers, or theme variants — not clone files.
+- Forms, toasts, and tooltips are defined once and reused everywhere.
+- Colors, spacing, radii, type — from tokens / CSS variables, not magic numbers in every block.
+- New screen: find an existing component first. Do not copy-paste a card if Card already exists.
+- States (hover, focus, disabled, loading, error) live on the component, not on each page.
+- Do not make a “button” from `div` + onClick. Do not make a “link” from `button` without a URL.
+- Icon without text — only inside a component with an accessible name.
+- Visual: one thesis per product (`frontend-design`), motion — `antigravity-design-expert`. Primitives stay singular. Project tokens beat a skill accent. No “design without components”.

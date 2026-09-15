@@ -1,0 +1,19 @@
+---
+description: One toast, tooltip, and modal per project; when to use each
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Feedback
+
+- One Toast, one Tooltip, one Modal per project. Do not clone markup.
+- Toast: non-critical success or info only. Auto-hide 4–7s, close on Escape and a button, `role="status"`. Do not cover the main CTA.
+- Do not use toast for form errors, 401/403, data loss, or delete confirm.
+- A tooltip does not carry required information. Everything needed for the task is in the DOM without hover. An “i” icon with no text is not the only source of a rule.
+- Overlay UI (modal, drawer, chat panel, lightbox): Escape always closes, plus a visible close control in the tab cycle. No “chat without Esc”.
+- Modal (APG): `role="dialog"`, `aria-modal="true"`, visible title (`aria-labelledby`), focus inside on open, Tab cycles inside, focus returns to the opener.
+- Overlay close only on a full click: both pointerdown and pointerup on the dimmer. If selection started inside the dialog and the mouse is released outside — do not close. Do not close on overlay `mouseup`/`click` alone without checking where `mousedown` was.
+- Overlay click does not close a destructive step without explicit confirm (Esc still cancels).
+- When any overlay opens, lock background scroll so the page does not jump left: reserve scrollbar width (`scrollbar-gutter: stable` on `html` and/or `padding-inline-end` equal to the scrollbar). Same for chats and side panels.
+- Do not open a modal for “Saved” — that is a toast or inline status.
+- Destructive action — confirm in a modal with an explicit button, not a single “Delete” with no undo (except an immediate undo).

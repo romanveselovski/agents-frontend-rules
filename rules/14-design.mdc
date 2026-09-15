@@ -1,0 +1,18 @@
+---
+description: Tokens and modern visuals from scratch; anti AI-UI slop
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Design from scratch
+
+If the repo has no brand book or tokens, define the system **before** the first page. If tokens exist, use only those. Skill: `skills/frontend-design/SKILL.md`. Motion: `antigravity-design-expert`, not instead of tokens.
+
+- Name a thesis in 1–2 words (editorial, industrial, warm product…). Do not mix more than two moods.
+- Tokens in one place: color, type, type scale, spacing (base 4 or 8), radius, duration/easing. Components do not know magic px or hex.
+- Color: one dominant, one accent, neutrals, semantic (text, surface, border, danger, success). Prefer `oklch()` for a new palette. Contrast per a11y. Light and dark palettes are required — `15-color-scheme.mdc`.
+- Type: one body face plus an optional display face. Do not default to Inter / Roboto / Arial / system-ui as “the design”. Do not load 8 weights.
+- Grid: long copy ≤ ~65ch; sections share one `max-width`. Spacing only from the scale.
+- Agent clichés are banned: purple-blue full-bleed gradient, left-stripe cards, emoji as icons, fake “Trusted by Google” logos, invented testimonials and “10,000+ users”, the same radius on everything.
+- Icons — one set. Photos — on-topic or neutral blocks, not stock handshakes.
+- Modern means tokens + contrast + motion with `prefers-reduced-motion`, not a trend for its own sake (bento in every section, grain on the whole screen, isometric grid with no need).

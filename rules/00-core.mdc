@@ -1,0 +1,21 @@
+---
+description: Pack constitution — user override, reuse, do not invent the stack
+alwaysApply: true
+---
+
+# Core
+
+- The user's chat request outranks these rules. An explicit “do it differently” overrides the pack only in that place.
+- Reply in chat in the language of the user's question or task (summary, explanations, questions). Code, file names, and site UI strings stay in the product language, not the chat language. If one message mixes languages, use the task's main language. If they asked for another reply language, use that.
+- Code — `karpathy-guidelines.mdc`: fewest lines, no extra abstractions, change only what was asked.
+- Copy (UI, meta, docs, md) — `52-copy.mdc` and `avoid-ai-writing.mdc`. Same file types as the UI.
+- Empty project — `01-greenfield.mdc`. Visual from scratch — `14-design.mdc` + `skills/frontend-design/SKILL.md`. Motion — `antigravity-design-expert` unless a flat mock exists. Do not swap the stack. React/Next only if already in the project (`frontend-developer`).
+- Skills do not override these rules. Components and a11y beat memorable decoration.
+- Interface behavior — `16-ux.mdc` (Nielsen + Material interaction), not necessarily a Google look.
+- Component approach is required. Build screens from existing primitives; do not copy-paste button, field, toast, tooltip, or modal markup.
+- Do not create one-off UI “just for this page” if the same pattern already exists or will be needed again.
+- Do not change the project's stack, router, CSS method, or design tokens. If tokens exist, use them; do not hardcode colors and spacing.
+- Do not add a library for one icon or one toast.
+- Header and footer stay shared across the site unless the user asked otherwise.
+- A custom 404 with HTTP 404 is part of every site's first scaffold; do not leave the host default page.
+- Before handoff: no cyclic logo link on home; clickable has hover and pointer (logo — pointer only); forms and feedback are not duplicated; 404 opens on a dead URL.

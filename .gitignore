@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+!.env.example
+.idea/
+*.swp
+*~
+config.bat
+node_modules

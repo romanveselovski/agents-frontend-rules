@@ -1,0 +1,21 @@
+---
+description: Labels, validation, error summary, submit states
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Forms
+
+- Every field has an associated `<label>` (or `for` / wrapping equivalent). Placeholder is not a label.
+- Use the correct `type`, `autocomplete`, `inputmode`. Do not use `type="text"` for email/tel/url when that is the field.
+- Required is not color or a star with no text. Explain format in a hint before the error.
+- After a failed submit: do not clear values; error summary at the top with focus; same wording next to the field; summary links go to fields; page `title` gets an `Error: ` prefix (or a local equivalent).
+- Error text says what is wrong and how to fix it. Ban “Invalid” and unexplained codes.
+- Do not treat an empty field as an error on blur before the first submit. Format (email and the like) may highlight after input.
+- Submit: idle / loading / success. Loading is not clickable again. Do not leave “Submit” with no request indication.
+- Password: show/hide. Do not autofill the confirm field as plain text.
+- Radio/checkbox groups — `fieldset` + `legend`.
+- Do not put form errors in a toast.
+- Accept unambiguous formats loosely (spaces in a postal code, extra hyphens in a phone) — do not fail on cosmetics.
+- In one flow do not ask the same data twice: prefill or let them pick (WCAG 3.3.7), except for security.
+- Passwords: `autocomplete="current-password"` / `new-password`; do not block paste or password managers.

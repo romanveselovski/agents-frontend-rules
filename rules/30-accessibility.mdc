@@ -1,0 +1,20 @@
+---
+description: WCAG 2.2 AA — contrast, keyboard, names, motion, zoom
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Accessibility (WCAG 2.2 AA)
+
+- Text contrast ≥ 4.5:1 (large text ≥ 3:1). UI components and graphical objects ≥ 3:1. Check both light and dark (`15-color-scheme.mdc`).
+- Meaning is not color alone: error, status, in-text link — also text / icon / underline.
+- Everything available with a mouse is available with a keyboard. Focus order is logical. No focus trap outside a modal.
+- Icon button: `aria-label` or visible text. Decorative image: `alt=""`. Informative: meaningful `alt`.
+- Do not disable zoom: viewport has no `user-scalable=no` and no `maximum-scale=1`.
+- Honor `prefers-reduced-motion`: no required infinite animations. Turn off GSAP/scroll scenes from `antigravity-design-expert` in that mode.
+- Touch target at least 24×24 px (WCAG 2.2 AA), prefer 44×44.
+- Do not require a complex gesture that is drag-only — provide buttons or fields.
+- Help (contacts, chat) stays in the same place on related screens if it exists.
+- Do not fully hide focus behind sticky bars (2.4.11 AA).
+- Authentication (3.3.8 AA): do not block paste or password managers; do not make login only by typing from a picture. Captcha is not the only path without an alternative.
+- Target is WCAG 2.2 AA, not a WCAG 3 draft.

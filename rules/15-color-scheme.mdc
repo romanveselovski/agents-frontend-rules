@@ -1,0 +1,17 @@
+---
+description: Required light and dark themes, system preference, contrast in both
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Light and dark theme
+
+A dark theme is required on every site. Not “later”. Do not invert the whole page with `filter`.
+
+- Same semantic tokens (surface, text, border, accent, danger). Light and dark values live together. Components do not know “night” — only tokens.
+- On `html`: `color-scheme: light dark` so scrollbar, inputs, and native dialogs match the theme.
+- Default is `prefers-color-scheme`. If a control exists: light / dark / system. Persist the choice. Class or attribute on `html` before first paint, no white/black flash.
+- WCAG 2.2 AA contrast in **both** themes. Focus and borders stay visible on dark surfaces.
+- Header, footer, modals, toasts, 404, forms use the same scheme. No “dark only on the home page”.
+- Logo and icons read on both backgrounds (two assets or a monochrome mark). Photos do not flash a white plate in dark theme.
+- `theme-color` (if used) has separate light and dark values via `media`.

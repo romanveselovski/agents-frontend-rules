@@ -1,0 +1,17 @@
+---
+description: Core Web Vitals, fonts, third-party scripts, animation
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Performance
+
+- Core Web Vitals (web.dev): LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1 at the 75th percentile. Treat **mobile** as the main signal (mobile-first indexing); desktop is separate, not a substitute.
+- Do not block first paint with heavy JS. Scripts — `type="module"`, `defer`, or `async` as appropriate.
+- Fonts: `font-display: swap` (or equivalent), a fallback with similar metrics, no long invisible text.
+- Third-party scripts (analytics, chats, widgets) stay off the critical path unless needed; load after consent if they are trackers.
+- `scroll` / `resize` / frequent `input` — debounce or throttle.
+- Animate `transform` and `opacity`, not `top` / `left` / `width` / `height`. Do not continuously animate `box-shadow` or `filter`. `will-change: transform` only on nodes that actually animate (see antigravity-design-expert).
+- Long lists — do not render thousands of nodes if the project has virtualization or pagination.
+- Do not lazy-load LCP. Do not bloat the DOM for decoration.
+- Measure the **production** build, not dev. Thresholds as above; in the lab TBT is the INP proxy. CI gate and `lighthouserc` — `skills/frontend-lighthouse/SKILL.md`. Do not add Lighthouse CI unless the user asked for a pipeline.

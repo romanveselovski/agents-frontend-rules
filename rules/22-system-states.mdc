@@ -1,0 +1,15 @@
+---
+description: Loading, empty, error, success for data screens
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# System states
+
+- A list, table, account, or search has four states: loading, empty, error, success (data). Do not leave a blank white screen.
+- Short content wait — spinner or local indicator. Page frame — skeleton, not a flashing empty layout.
+- Operations longer than a few seconds — progress, not an endless spinner with no text.
+- Empty: why it is empty and what to do (CTA). Distinguish “nothing yet” from “nothing found”.
+- Error: what happened in plain language and Retry / back. Do not show a stack to the user.
+- Success after an action: a lasting UI change or a short toast. Close the loop (button → loading → result).
+- Mark busy: `aria-busy` on the region, status in a live region (`role="status"`), critical failure — `role="alert"`.

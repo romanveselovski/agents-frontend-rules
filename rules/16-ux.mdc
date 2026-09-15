@@ -1,0 +1,22 @@
+---
+description: Shared UX — Nielsen + Material 3 interaction, not a Google skin
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# UX / UI behavior
+
+Do not copy Material’s look unless the user asked for “like Google”. Take the **behavior** ([Material 3 Interaction](https://m3.material.io/foundations), Nielsen heuristics).
+
+- System status is visible: request, success, error, place in nav (`aria-current`). Do not stay silent after a click.
+- Every interactive has the full set: default, hover (where a mouse exists), focus, **pressed**, disabled (+ dragged if it is dragged). Pressed is visible on the press frame, including on phones. Not color alone — also light/layer/outline/scale (state layer).
+- Touch target: 24px minimum (WCAG), **48×48** Material target. Space between dangerous buttons.
+- One primary CTA per screen. Secondary is weaker. Not three equally loud buttons in one block.
+- The same things look and behave the same on every page (button, back, search, help).
+- The person stays in control: back, cancel, Escape, undo after danger. Do not steal the OS back gesture with your swipe.
+- Recognition over recall: labels on buttons, no nameless icons; hints before errors.
+- Motion explains where a layer came from (modal grows from the action, no teleport). No motion if `prefers-reduced-motion`.
+- What is on top is more important: modal above the page, toast does not cover the main CTA. Not a flat “same z everywhere”.
+- Errors: do not blame; say how to fix. Destructive — confirm. Empty and 404 — a path forward.
+- Scan path: heading → point → action. Do not hide price or submit three screens down without a reason.
+- Do not require sign-up before value unless the user asked for that.

@@ -1,0 +1,16 @@
+---
+description: Shared header/footer, landmarks, skip-link, required custom 404
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Site chrome
+
+- Header and footer are the same on every page unless the user asked otherwise.
+- Landmarks: `header`, `nav`, `main` (one), `footer`. Skip-link is first in focus and goes to `main`.
+- Current nav item: visually and `aria-current="page"`. Breadcrumbs if depth is more than one level from home and this is not a single-pager.
+- A custom 404 is required in every project by default: same header/footer, clear copy, links to home / sections / search. Not the host stub and not a bare server page.
+- Configure delivery: a missing path returns HTTP 404 (not 200). In an SPA/router — a `not-found` page and host fallback to it; in static hosting — `error_page` or the platform equivalent. Verify with one known-bad URL.
+- The 404 page is not in the sitemap and is not a normal indexable section.
+- Do not hide content behind a full-screen interstitial on mobile.
+- Sticky chrome must not fully cover keyboard focus (WCAG 2.4.11). Keep the fixed header short on mobile.

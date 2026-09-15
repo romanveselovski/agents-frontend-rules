@@ -1,0 +1,20 @@
+---
+description: Scaffold for any new site — what to create on the first pass
+alwaysApply: true
+---
+
+# Project quick start
+
+When there is no repo yet or the scaffold is empty, do this on the first pass, not “later”:
+
+1. Do not invent a stack: ask or use what is already in the folder. No stack — one simple option (HTML/CSS or whatever the user named).
+2. Tokens and thesis — `14-design.mdc` before the first section. Both themes immediately — `15-color-scheme.mdc`.
+3. Shared header/footer, skip-link, `main`, custom 404 served as HTTP 404.
+4. Home: logo has no self-link. Viewport, `lang`, favicon.
+5. Stub `robots.txt` and `sitemap.xml` (at least the home page; 404 not in the map).
+6. `.env.example` with no secrets. Secrets stay out of git.
+7. Primitives: Button, Input, link, toast/modal — one each, not copies on the hero.
+8. Copy — real draft product phrases, not Lorem and not “Unlock the future”.
+9. Do not add analytics, chat, or Lighthouse CI unless asked.
+
+Further pages come only from this scaffold.

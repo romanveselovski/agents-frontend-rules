@@ -1,0 +1,15 @@
+---
+description: CLS, lazy, srcset, video without autoplay sound
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Images and media
+
+- Set `width` and `height` or `aspect-ratio` so layout does not jump (CLS).
+- Hero / LCP image: not `loading="lazy"`. Below the fold — lazy.
+- Important LCP image may use `fetchpriority="high"`.
+- Raster: modern formats (WebP/AVIF) with a fallback; `srcset`/`sizes` if the image stretches.
+- Informative `alt`. Decor — empty alt. Do not write “image” / “picture” in alt.
+- Video: no autoplay sound. Autoplay only muted and with controls. Content video — captions.
+- Do not use a heavy GIF if video will do. Do not ship a giant PNG without need.

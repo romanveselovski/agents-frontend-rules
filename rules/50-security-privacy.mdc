@@ -1,0 +1,18 @@
+---
+description: XSS, eval, secrets, trackers, cookies, noopener
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Security and privacy (frontend)
+
+- Do not insert unsanitized HTML from APIs, query, or markdown. Prefer text. Ban `eval`, `new Function`, `innerHTML` with untrusted data.
+- Secrets, admin keys, private tokens — not in the client bundle or a public repo.
+- The site is HTTPS. Do not load mixed content.
+- `target="_blank"` always with `rel="noopener noreferrer"`.
+- Do not load trackers and marketing pixels before consent if the site collects consent.
+- Cookies: do not propose patterns without `Secure`, `HttpOnly` (for session), `SameSite`. Do not put the session in `localStorage` if a cookie is enough.
+- No JSONP. No private data in public JS files.
+- Escape user content in attributes and URLs too (XSS in href/src).
+- CSP is a second layer, not a substitute for encoding. Prefer a header; `frame-ancestors` instead of X-Frame-Options as the only defense. Do not propose `unsafe-inline` / `unsafe-eval` without need.
+- External CDN scripts — Subresource Integrity when the URL is fixed.

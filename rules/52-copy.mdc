@@ -1,0 +1,13 @@
+---
+description: UI, meta, and 404 copy — specific, no AI clichés
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx,md}"
+alwaysApply: false
+---
+
+# Copy
+
+- Every visible string is content: buttons, title, description, empty states, 404, toasts, aria-label. Follow `avoid-ai-writing.mdc`. No exception for “it’s just a button”.
+- Banned templates: Unlock the power, Welcome to the future, In today's digital world, seamless, cutting-edge, empty triple adjectives with no fact.
+- A button names the action. Empty screen — why it is empty and what to press. Error — what happened and what to do.
+- One site language. Do not mix English corporate speak into another language’s UI or the reverse.
+- Do not invent a brand voice. Short, specific, human — not a pitch deck.

@@ -1,0 +1,21 @@
+---
+description: Semantics, title, canonical, crawl, schema, mobile parity, button vs link
+globs: "**/*.{html,css,scss,js,ts,jsx,tsx,vue,svelte,astro,mdx}"
+alwaysApply: false
+---
+
+# Semantics and SEO
+
+- HTML5 doctype, `lang` on `html`, UTF-8 first in `head`, a correct viewport.
+- One `h1`. Headings without level skips. Unique `title` and meta description on every public page: title matches the page, not one brand title on every URL; description says why to click.
+- One URL per document: `rel="canonical"`, HTTP→HTTPS 301, no `www`/`index` duplicates. Prefer one responsive URL, not an `m.` site. Canonical is a hint, not a guarantee. Home logo has no self-link.
+- Public pages: Open Graph (title, description, image ~1200×630, not a tiny logo). Favicon is set.
+- Address changes → `<a href>`. Action → `<button>`. Unique `id`s. No table for layout. Lists — `ul`/`ol`. Link text describes the target, not bare “here” / “read more” without an accessible name.
+- `robots.txt` does not block CSS/JS. Same robots directives on every page variant; do not `noindex` only the mobile template.
+- There is a `sitemap.xml` and a pointer to it (robots.txt and/or Search Console). The map lists only canonical public URLs.
+- Utility URLs (cart, thank-you, infinite filters): `noindex` or canonical to a clean URL. Do not serve 200 for a missing page (soft 404).
+- JSON-LD only for what is visible. Build and check fields with `skills/seo-aeo-schema-generator/SKILL.md`: one `<script>` per type, absolute `https://` URLs, no HTML inside strings, no placeholders. FAQPage / HowTo / Product only if FAQ, steps, or a product are actually on the page.
+- For AI search (GEO) — `skills/seo-geo/SKILL.md`: question in the H2, answer in the first 40–60 words of the section, facts with a source. `robots.txt` does not block GPTBot / OAI-SearchBot / ClaudeBot / PerplexityBot unless the user asked to block bots. A content site may have `/llms.txt`. Main copy is in HTML (not only after JS).
+- Main copy, headings, internal links, alt, and schema in the mobile HTML match desktop. Do not cut content “for the phone” or hide it so it is missing from markup. “Read more” must not be the only way a bot sees the body.
+- Nav and footer are real `href` links in the DOM, not only `div` clicks.
+- Missing path: HTTP 404 and a custom page (see chrome), not 200 with “not found” text.
